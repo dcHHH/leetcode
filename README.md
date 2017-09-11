@@ -7,6 +7,9 @@
 
 ### 53. Maximum Subarray
 https://en.wikipedia.org/wiki/Maximum_subarray_problem
+以i为结束位置的最大子数组之和：$B_{i}$
+索引为i的数组值：$A_{i+1}$
+$ {\displaystyle B_{i+1}=max(A_{i+1},A_{i+1}+B_{i})} $
 
 ### 69
 牛顿法开平方
@@ -46,6 +49,13 @@ majority element的个数超过半数，则排序后，中间值为所求。
 
 ### 448
 `1 ≤ a[i] ≤ n`（n：数组长度），将`array[a[i]]`的值变为`-abs(array[a[i]])`，最后数组中值为正数的，说明该索引没有出现，即该索引对应的值没有出现。
+
+### 453. Minimum Moves to Equal Array Elements
+sum：列表之和；minNum：列表最小元素；n：列表长度
+m：m次move；x：最终相同时的数
+
+`sum + m * (n - 1) = x * n`；`x = minNum + m`
+则`sum - minNum * n = m`
 
 ### 463
 相邻两格不同，则含有一条边，周长加一。遍历将行的结果与列的相加。
