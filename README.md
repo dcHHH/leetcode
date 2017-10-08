@@ -73,19 +73,22 @@ m：m次move；x：最终相同时的数
 
 ### 496
 
+### 540. Single Element in a Sorted Array
+二分法判断的标准：先计算`mid`，`mid`与`mid ^ 1`为连续的（偶数位，奇数位）。当`mid`与`mid ^ 1`相等时，说明只出现一次的数出现在后部分，在`mid + 1`与`right`中继续搜索反之。
 
 ### 561
 给定数组之和为定值，每个数对之间的相差越小，则每个数对中较小值之和最大。将数组排序之后，求和以2为步长，即为结果。
 
 ### 566
 
-## 栈
+## 数据结构
+### 栈
 
-### 20
+#### 20
 
-## 树
+### 树
 
-### 102:Binary Tree Level Order Traversal
+#### 102:Binary Tree Level Order Traversal
 
 ```
 def levelOrder(self, root):
@@ -96,6 +99,6 @@ def levelOrder(self, root):
    return ans
 ```
 
-### 637
+#### 637
 
 
