@@ -6,6 +6,16 @@
 ### 1
 
 ### 39. Combination Sum
+```
+def dfs(nums, target, index, path, res):
+            if target < 0:
+                return
+            if target == 0:
+                res.append(path)
+                return 
+            for i in xrange(index, len(nums)):
+                dfs(nums, target - nums[i], i, path + [nums[i]], res)
+```
 
 ### 53. Maximum Subarray
 https://en.wikipedia.org/wiki/Maximum_subarray_problem
@@ -48,6 +58,13 @@ majority element的个数超过半数，则排序后，中间值为所求。
 ### 342
 1010101010101010101010101010101 (1431655765)
 `num & num -1 == 0 and num & 1431655765 == num`
+
+### 337. House Robber III
+`f1(node)` 为以node为根结点的子树中可以抢的最大钱数（包含根结点）。
+`f0(node)` 为以node为根结点的子树中可以抢的最大钱数（不包含根结点）。
+则：
+`f0(node) = f1(node.left) + f1(node.right)` 
+`f1(node) = max( f0(node.left)+f0(node.right)+node.value, f0(node) )`.
 
 ### 338
 
