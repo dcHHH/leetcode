@@ -1,12 +1,27 @@
 # LeetCode
-[toc]
+[TOC]
 
 ## 算法
 
-### 1
+### 1. Two Sum
+
+```
+Given an array of integers, return indices of the two numbers such that they add up to a specific target.
+```
+
+创建一个字典`dic：target - nums[i] : i`，对列表进行遍历，如果`nums[i]`在`dic`中，则搜索成功。
+
+```python
+dic = {}
+for i in range(len(nums)):
+	if nums[i] in dic:
+		return [dic[nums[i]], i]
+	else:
+		dic[target - nums[i]] = i
+```
 
 ### 39. Combination Sum
-```
+```python
 def dfs(nums, target, index, path, res):
             if target < 0:
                 return
