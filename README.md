@@ -20,7 +20,31 @@ for i in range(len(nums)):
 		dic[target - nums[i]] = i
 ```
 
+###2.Add Two Numbers
+
+```
+Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
+Output: 7 -> 0 -> 8
+```
+
+```python
+carry = 0
+ans = cur = ListNode(0)
+while l1 or l2 or carry:
+	if l1:
+    	carry += l1.val
+    	l1 = l1.next
+	if l2:
+    	carry += l2.val
+    	l2 = l2.next
+	carry, val = divmod(carry, 10)
+    cur.next = ListNode(val)
+    cur = cur.next
+    return ans.next
+```
+
 ### 39. Combination Sum
+
 ```python
 def dfs(nums, target, index, path, res):
             if target < 0:
@@ -85,7 +109,7 @@ majority element的个数超过半数，则排序后，中间值为所求。
 
 ### 345
 
-
+### 406
 
 ### 442
 `1 ≤ a[i] ≤ n`（n：数组长度），将`array[a[i]]`的值乘-1，~~数组出现正数，则该正数的索引出现两次~~（有些数组中有些数可能一次也没出现，也为正数）。判断`array[a[i]]`的值，为负，则是第二次检测到该索引，因此该索引出现两次。
